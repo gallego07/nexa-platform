@@ -33,7 +33,12 @@
                 "output": "assets"
               }
             ],
-            "styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css","src/global.scss","src/theme/variables.scss"],
+            "styles": [
+  "node_modules/@fontsource-variable/inter/index.css",
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "src/global.scss",
+  "src/theme/variables.scss"
+],
             "scripts": [],
             "browser": "src/main.ts"
           },
