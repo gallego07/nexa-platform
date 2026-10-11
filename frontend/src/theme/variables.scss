@@ -1,2 +1,21 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
+
+/* ===== Identidad visual NEXA ===== */
+:root {
+  /* Colores de marca */
+  --nexa-purple: #6c63ff;
+  --nexa-dark: #151522;
+  --nexa-mint: #00c9a7;
+  --nexa-background: #f7f7fb;
+  --nexa-white: #ffffff;
+  --nexa-gray: #6b6b7a;
+
+  /* Color primario de Ionic = morado NEXA */
+  --ion-color-primary: #6c63ff;
+  --ion-color-primary-rgb: 108, 99, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #5f57e0;
+  --ion-color-primary-tint: #7b73ff;
+}
