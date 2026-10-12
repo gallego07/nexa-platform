@@ -1,0 +1,46 @@
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-top: 8vh;
+}
+
+.logo {
+  margin: 0;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--nexa-purple);
+}
+
+.slogan {
+  margin: 4px 0 32px;
+  text-align: center;
+  color: var(--nexa-gray);
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: var(--nexa-dark);
+}
+
+ion-input {
+  margin-bottom: 16px;
+  --border-radius: 12px;
+}
+
+ion-button {
+  margin-top: 8px;
+  --border-radius: 12px;
+}
+
+.register-link {
+  margin-top: 24px;
+  text-align: center;
+  color: var(--nexa-gray);
+}
+
+.register-link a {
+  color: var(--nexa-purple);
+  font-weight: 600;
+  text-decoration: none;
+}
