@@ -1,0 +1,91 @@
+.register-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-top: 6vh;
+}
+
+.logo {
+  margin: 0;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--nexa-purple);
+}
+
+.slogan {
+  margin: 4px 0 28px;
+  text-align: center;
+  color: var(--nexa-gray);
+}
+
+h2 {
+  margin: 0 0 4px;
+  color: var(--nexa-dark);
+}
+
+.paso-indicador {
+  margin: 0 0 20px;
+  color: var(--nexa-gray);
+  font-size: 0.9rem;
+}
+
+ion-input {
+  margin-bottom: 16px;
+  --border-radius: 12px;
+}
+
+ion-button {
+  margin-top: 8px;
+  --border-radius: 12px;
+}
+
+.login-link {
+  margin-top: 24px;
+  text-align: center;
+  color: var(--nexa-gray);
+}
+
+.login-link a {
+  color: var(--nexa-purple);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.rol-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 18px;
+  text-align: left;
+  font-family: inherit;
+  background: var(--nexa-white);
+  border: 2px solid #dcdce6;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.rol-card:hover {
+  border-color: var(--nexa-purple);
+}
+
+.rol-card.seleccionada {
+  border-color: var(--nexa-purple);
+  background: rgba(108, 99, 255, 0.08);
+}
+
+.rol-icono {
+  font-size: 1.6rem;
+}
+
+.rol-titulo {
+  font-weight: 700;
+  color: var(--nexa-dark);
+}
+
+.rol-descripcion {
+  color: var(--nexa-gray);
+  font-size: 0.9rem;
+}

@@ -1,13 +1,87 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="register-container">
+    <h1 class="logo">NEXA</h1>
+    <p class="slogan">Encuentra. Conecta. Resuelve.</p>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    @if (paso === 1) {
+      <h2>Crea tu cuenta</h2>
+      <p class="paso-indicador">Paso 1 de 2</p>
+
+      <ion-input
+        type="text"
+        label="Nombre"
+        labelPlacement="floating"
+        fill="outline"
+        [(ngModel)]="nombre"
+      ></ion-input>
+
+      <ion-input
+        type="email"
+        label="Correo electrónico"
+        labelPlacement="floating"
+        fill="outline"
+        [(ngModel)]="correo"
+      ></ion-input>
+
+      <ion-input
+        type="password"
+        label="Contraseña"
+        labelPlacement="floating"
+        fill="outline"
+        helperText="Mínimo 8 caracteres"
+        [(ngModel)]="contrasena"
+      ></ion-input>
+
+      <ion-button
+        expand="block"
+        color="primary"
+        [disabled]="!paso1Valido"
+        (click)="continuar()"
+      >
+        Continuar
+      </ion-button>
+
+      <p class="login-link">
+        ¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a>
+      </p>
+    } @else {
+      <h2>¿Qué quieres hacer en NEXA?</h2>
+      <p class="paso-indicador">Paso 2 de 2</p>
+
+      <button
+        type="button"
+        class="rol-card"
+        [class.seleccionada]="rol === 'comprador'"
+        (click)="elegirRol('comprador')"
+      >
+        <span class="rol-icono">🛒</span>
+        <span class="rol-titulo">Quiero comprar</span>
+        <span class="rol-descripcion">Explora y compra productos y soluciones</span>
+      </button>
+
+      <button
+        type="button"
+        class="rol-card"
+        [class.seleccionada]="rol === 'vendedor'"
+        (click)="elegirRol('vendedor')"
+      >
+        <span class="rol-icono">🏪</span>
+        <span class="rol-titulo">Quiero vender</span>
+        <span class="rol-descripcion">Publica y gestiona tus productos en NEXA</span>
+      </button>
+
+      <ion-button
+        expand="block"
+        color="primary"
+        [disabled]="!rol"
+        (click)="crearCuenta()"
+      >
+        Crear mi cuenta
+      </ion-button>
+
+      <ion-button expand="block" fill="clear" (click)="volver()">
+        ← Atrás
+      </ion-button>
+    }
+  </div>
 </ion-content>
