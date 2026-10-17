@@ -1,27 +1,160 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+/* ===== Barra superior ===== */
+.nexa-navbar {
+  background: var(--nexa-dark);
+  padding: 14px 0;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.navbar-interior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
+.navbar-logo {
+  color: var(--nexa-white);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
   text-decoration: none;
+}
+
+.navbar-enlaces {
+  display: flex;
+  gap: 24px;
+}
+
+.navbar-enlaces a {
+  color: #c9c9d6;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navbar-enlaces a:hover {
+  color: var(--nexa-white);
+}
+
+.navbar-acciones {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-login {
+  padding: 8px 16px;
+  color: var(--nexa-white);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--nexa-purple);
+  border-radius: 12px;
+}
+
+.navbar-carrito {
+  font-size: 1.3rem;
+}
+
+/* ===== Sección principal ===== */
+.hero {
+  max-width: 900px;
+  padding-top: 56px;
+  padding-bottom: 48px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-weight: 800;
+  color: var(--nexa-dark);
+}
+
+.hero-subtitulo {
+  margin: 0 0 28px;
+  color: var(--nexa-gray);
+}
+
+/* ===== Buscador ===== */
+.buscador {
+  display: flex;
+  gap: 8px;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+
+.buscador input {
+  flex: 1;
+  padding: 14px 16px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--nexa-dark);
+  background: var(--nexa-white);
+  border: 1px solid #dcdce6;
+  border-radius: 12px;
+}
+
+.buscador input:focus {
+  outline: 2px solid var(--nexa-purple);
+  border-color: transparent;
+}
+
+.buscador button {
+  padding: 0 22px;
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--nexa-white);
+  cursor: pointer;
+  background: var(--nexa-purple);
+  border: 0;
+  border-radius: 12px;
+}
+
+/* ===== Tarjetas de necesidades ===== */
+h2 {
+  margin: 0 0 20px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--nexa-dark);
+}
+
+.necesidad-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 22px 12px;
+  font-family: inherit;
+  cursor: pointer;
+  background: var(--nexa-white);
+  border: 2px solid #ececf3;
+  border-radius: 14px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.necesidad-card:hover {
+  border-color: var(--nexa-purple);
+  transform: translateY(-2px);
+}
+
+.necesidad-icono {
+  font-size: 2rem;
+}
+
+.necesidad-nombre {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--nexa-dark);
+  text-align: center;
+}
+
+/* ===== Celular ===== */
+@media (max-width: 576px) {
+  .navbar-enlaces {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 32px;
+  }
 }

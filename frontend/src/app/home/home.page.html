@@ -1,20 +1,52 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="primary">
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <header class="nexa-navbar">
+    <div class="container navbar-interior">
+      <a routerLink="/home" class="navbar-logo">NEXA</a>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      <nav class="navbar-enlaces">
+        <a routerLink="/home">Explorar</a>
+        <a routerLink="/home">Soluciones</a>
+      </nav>
+
+      <div class="navbar-acciones">
+        <a routerLink="/login" class="navbar-login">Iniciar sesión</a>
+        <span class="navbar-carrito" aria-label="Carrito">🛒</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container hero">
+    <h1>¿Qué necesitas resolver hoy?</h1>
+    <p class="hero-subtitulo">
+      Cuéntanos qué estás buscando y NEXA te ayuda a encontrarlo.
+    </p>
+
+    <div class="buscador">
+      <input
+        type="search"
+        placeholder="Cuéntanos qué estás buscando..."
+        aria-label="Buscar en NEXA"
+        [(ngModel)]="busqueda"
+        (keyup.enter)="buscar()"
+      />
+      <button type="button" (click)="buscar()">Buscar</button>
+    </div>
+
+    <h2>Explora por necesidad</h2>
+
+    <div class="row g-3">
+      @for (necesidad of necesidades; track necesidad.nombre) {
+        <div class="col-6 col-md-3">
+          <button
+            type="button"
+            class="necesidad-card"
+            (click)="elegirNecesidad(necesidad)"
+          >
+            <span class="necesidad-icono">{{ necesidad.icono }}</span>
+            <span class="necesidad-nombre">{{ necesidad.nombre }}</span>
+          </button>
+        </div>
+      }
+    </div>
+  </main>
 </ion-content>
