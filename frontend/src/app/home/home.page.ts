@@ -3,10 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { IonContent } from '@ionic/angular';
 
-
 interface Necesidad {
   icono: string;
   nombre: string;
+  color: string;
 }
 
 @Component({
@@ -19,14 +19,14 @@ export class HomePage {
   busqueda = '';
 
   necesidades: Necesidad[] = [
-    { icono: '💻', nombre: 'Mi espacio de trabajo' },
-    { icono: '🏠', nombre: 'Mi hogar' },
-    { icono: '🎁', nombre: 'Quiero hacer un regalo' },
-    { icono: '🎮', nombre: 'Mi setup' },
-    { icono: '📚', nombre: 'Necesito estudiar' },
-    { icono: '✈️', nombre: 'Voy a viajar' },
-    { icono: '👗', nombre: 'Quiero crear un look' },
-    { icono: '✨', nombre: 'Tengo otra idea' },
+    { icono: '💻', nombre: 'Mi espacio de trabajo', color: '#6C63FF' },
+    { icono: '🏠', nombre: 'Mi hogar', color: '#00C9A7' },
+    { icono: '🎁', nombre: 'Quiero hacer un regalo', color: '#FF7A59' },
+    { icono: '🎮', nombre: 'Mi setup', color: '#FFC857' },
+    { icono: '📚', nombre: 'Necesito estudiar', color: '#C9C4FF' },
+    { icono: '✈️', nombre: 'Voy a viajar', color: '#38BDF8' },
+    { icono: '👗', nombre: 'Quiero crear un look', color: '#FF5FA2' },
+    { icono: '✨', nombre: 'Tengo otra idea', color: '#E4E4F0' },
   ];
 
   buscar() {

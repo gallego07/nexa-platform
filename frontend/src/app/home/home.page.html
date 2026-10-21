@@ -15,37 +15,41 @@
     </div>
   </header>
 
-  <main class="container hero">
-    <h1>¿Qué necesitas resolver hoy?</h1>
-    <p class="hero-subtitulo">
-      Cuéntanos qué estás buscando y NEXA te ayuda a encontrarlo.
-    </p>
+  <section class="hero">
+    <div class="hero-contenido">
+      <h1>¿Qué necesitas resolver hoy?</h1>
+      <p class="hero-subtitulo">
+        Cuéntanos qué buscas y NEXA lo convierte en una solución.
+      </p>
 
-    <div class="buscador">
-      <input
-        type="search"
-        placeholder="Cuéntanos qué estás buscando..."
-        aria-label="Buscar en NEXA"
-        [(ngModel)]="busqueda"
-        (keyup.enter)="buscar()"
-      />
-      <button type="button" (click)="buscar()">Buscar</button>
+      <div class="buscador">
+        <input
+          type="search"
+          placeholder="Cuéntanos qué estás buscando..."
+          aria-label="Buscar en NEXA"
+          [(ngModel)]="busqueda"
+          (keyup.enter)="buscar()"
+        />
+        <button type="button" (click)="buscar()">Buscar</button>
+      </div>
     </div>
+  </section>
 
+  <main class="necesidades">
     <h2>Explora por necesidad</h2>
 
-    <div class="row g-3">
-      @for (necesidad of necesidades; track necesidad.nombre) {
-        <div class="col-6 col-md-3">
-          <button
-            type="button"
-            class="necesidad-card"
-            (click)="elegirNecesidad(necesidad)"
-          >
-            <span class="necesidad-icono">{{ necesidad.icono }}</span>
-            <span class="necesidad-nombre">{{ necesidad.nombre }}</span>
-          </button>
-        </div>
+    <div class="bento">
+      @for (necesidad of necesidades; track necesidad.nombre; let primero = $first) {
+        <button
+          type="button"
+          class="bento-card"
+          [class.destacada]="primero"
+          [style.background]="necesidad.color"
+          (click)="elegirNecesidad(necesidad)"
+        >
+          <span class="bento-icono">{{ necesidad.icono }}</span>
+          <span class="bento-nombre">{{ necesidad.nombre }}</span>
+        </button>
       }
     </div>
   </main>
