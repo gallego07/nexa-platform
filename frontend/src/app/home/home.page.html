@@ -53,4 +53,36 @@
       }
     </div>
   </main>
+  
+  <section class="soluciones">
+    <h2>Soluciones para ti</h2>
+
+    <div class="tablero">
+      @for (solucion of soluciones; track solucion.titulo) {
+        <article class="solucion">
+          <div
+            class="solucion-imagen"
+            [style.height.px]="solucion.alto"
+            [style.background]="solucion.fondo"
+          ></div>
+
+          <button
+            type="button"
+            class="guardar"
+            [class.guardada]="solucion.guardada"
+            [attr.aria-pressed]="solucion.guardada"
+            [attr.aria-label]="solucion.guardada ? 'Quitar de guardados' : 'Guardar solución'"
+            (click)="alternarGuardada(solucion)"
+          >
+            {{ solucion.guardada ? '♥' : '♡' }}
+          </button>
+
+          <div class="solucion-info">
+            <strong>{{ solucion.titulo }}</strong>
+            <span>{{ solucion.productos }} productos · {{ solucion.precio }}</span>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
 </ion-content>
