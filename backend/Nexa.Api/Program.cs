@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using Nexa.Api.Data;
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<NexaDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("NexaDb")));
 
 // Add services to the container.
 
